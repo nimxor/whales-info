@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  whales-info:
+    container_name: whales-info
+    image: acrdiscord.azurecr.io/whales-info
+    restart: "always"
+    environment:
+      - WHALE_INFO_KEY=${WHALE_INFO_KEY}
+      - MONGODB_USERNAME=${MONGODB_USERNAME}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+    build:
+      context: .
+      dockerfile: ./Dockerfile
